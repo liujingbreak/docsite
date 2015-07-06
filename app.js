@@ -41,19 +41,27 @@ app.use('/angularjs', express.static('/Users/liujing/myproject/angularJS/angular
 
 (function(){
 	function sendHtml(req, res){
-		res.sendfile(path.join('/Users/liujing/myproject/angularJS/angular-1.3.8', 'docs','index.html'));
+		res.sendfile(path.join('/Users/liujing/myproject/3rd-party/angularJS/angular-1.3.16', 'docs','index.html'));
 	}
 	app.route('/angularjs1.3/docs/api').get(sendHtml);
 	app.route('/angularjs1.3/docs/api/*').get(sendHtml);
 	app.route('/angularjs1.3/docs/guide/*').get(sendHtml);
 })();
 
-app.use('/angularjs1.3', express.static('/Users/liujing/myproject/angularJS/angular-1.3.8'));
-app.use('/yui3', express.static('/Users/liujing/myproject/yui_3.12.0'));
-app.use('/antlr3', express.static('/Users/liujing/myproject/antlr-3.3/api-doc'));
+app.use('/angularjs1.3', express.static('/Users/liujing/myproject/3rd-party/angularJS/angular-1.3.16'));
+app.use('/yui3', express.static('/Users/liujing/myproject/3rd-party/yui_3.12.0'));
+app.use('/antlr3', express.static('/Users/liujing/myproject/3rd-party/antlr-3.3/api-doc'));
 app.use('/java7', express.static('/Users/liujing/doc/jdk7doc/docs'));
 app.use('/javatu', express.static('/Users/liujing/doc/javatutorial/tutorial'));
 app.use('/jedit', express.static('/Applications/jEdit.app/Contents/Resources/Java/doc/api'));
+app.use('/ik', express.static('/Users/liujing/myproject/ikisspower/presentation01'));
+app.get('/ik', function(req, res){
+    res.sendfile('/Users/liujing/myproject/ikisspower/presentation01/index.html');
+});
+app.use('/ik2', express.static('/Users/liujing/myproject/ikisspower/presentation02'));
+app.get('/ik2', function(req, res){
+    res.sendfile('/Users/liujing/myproject/ikisspower/presentation02/index.html');
+});
 //app.use('/test', express.static(path.join(__dirname, 'test')));
 // development only
 
